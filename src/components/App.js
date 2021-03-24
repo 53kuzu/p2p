@@ -1,8 +1,9 @@
 import React from 'react';
+import InputFormLocal from './InputFormLocal'
+import InputFormRemote from './InputFormRemote'
 
-
-async function getMedia = async () => {
-  const constraints  = {audio: true,video:true}
+const getMedia = async () => {
+  const constraints  = { audio: true, video: true }
 
   try {
     return await navigator.mediaDevices.getUserMedia(constraints);
@@ -16,7 +17,12 @@ async function getMedia = async () => {
 getMedia();
 
 const App = () => {
-  return <div>Hello, React!</div>;
+  return (
+  <>
+    <InputFormLocal/>
+    <InputFormRemote/>
+  </>
+  );
 };
 
 export default App;
