@@ -53,11 +53,16 @@ export default function SignIn({ localPeerName, setLocalPeerName }) {
     setDisabled(disabled);
   },[name]);
 
-  const initializeLocalPeer = useCallback((e) => {
-    setLocalPeerName(name);
-    e.preventDefault();
-  },[name,setLocalPeerName]);
+  const initializeLocalPeer = useCallback(
+    (e) => {
+      setLocalPeerName(name);
+      e.preventDefault();
+    },
+    [name,setLocalPeerName]
+  );
 
+
+  if (localPeerName !== '') return <></>;
 
   return (
     <Container component="main" maxWidth="xs">
