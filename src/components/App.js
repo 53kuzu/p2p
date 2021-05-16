@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 
 import InputFormLocal from './InputFormLocal'
 import InputFormRemote from './InputFormRemote'
+import VideoArea from './VideoArea';
 
 const getMedia = async () => {
   const constraints  = { audio: true, video: true }
@@ -29,9 +30,13 @@ const App = () => {
       setLocalPeerName = {setLocalPeerName}
     />
     <InputFormRemote
-    localPeerName = {localPeerName}
+      localPeerName = {localPeerName}
       remotePeerName = {remotePeerName}
       setRemotePeerName = {setRemotePeerName}
+    />
+    <VideoArea 
+      localPeerName = {localPeerName}
+      remotePeerName = {remotePeerName}
     />
   </>
   );
